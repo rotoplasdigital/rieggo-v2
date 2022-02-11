@@ -1,0 +1,58 @@
+@import "fuentes.css";
+/* @import "colores.css"; */
+@import "hover.css";
+
+/* ==============================================================
+/*	MENU
+/* ============================================================== */
+	#rieggo-navegacion {
+		background: rgb(0 37 84 / 0%);
+		transition: all ease .3s;
+		padding: 0 2rem;
+		padding-top: .5rem !important;
+		padding-bottom: .5rem !important;
+	}
+	#rieggo-navegacion img {
+		/* width: 200px; */
+		height: 70px;
+		transition: all ease .3s;
+	}
+
+	.nav-link {
+		color: #002554 !important;
+	}
+/* menu */
+
+
+/* ==============================================================
+/*	FOOTER
+/* ============================================================== */
+	footer {
+		background: #00c7b1;
+		color: #fff;
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+	}
+
+	.footer-btn {
+		display: block;
+		text-decoration: none;
+		padding: .25rem;
+		margin: .25rem 0;
+		color:#fff;
+		transition: all ease .3s;
+	}
+	.footer-btn:hover {
+		color:#009cde;
+	}
+
+	.footer-btn img {
+		margin-right: .5rem;
+		vertical-align: middle;
+	}
+	.footer-btn span {
+		vertical-align: top;
+		display: inline-block;
+		width: 85%;
+	}
+/* footer */

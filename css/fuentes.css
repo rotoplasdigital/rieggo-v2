@@ -1,0 +1,53 @@
+/* ==============================================================
+/*	FUENTES
+/* ============================================================== */
+	@font-face {
+		font-family: 'rotoplas-bold';
+		src: url('fonts/Rotoplas-Bold.otf');
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'rotoplas-bold-italic';
+		src: url('fonts/Rotoplas-BoldItalic.otf');
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'rotoplas-regular';
+		src: url('fonts/Rotoplas-Regular.otf');
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'rotoplas-light';
+		src: url('fonts/Rotoplas-Light.otf');
+		font-display: swap;
+	}
+
+	body {
+		font-family: 'rotoplas-regular', sans-serif;
+		color: #002554;
+		font-size: 1rem;
+		line-height: normal;
+	}
+
+	.bold { font-family: 'rotoplas-bold'; }
+	.regular { font-family: 'rotoplas-regular'; }
+	.light { font-family: 'rotoplas-light'; }
+/* fuentes */
+
+
+
+/* ==============================================================
+/*	TAMAÑOS DE FUENTES
+/* ============================================================== */
+	.fs12 { font-size: 12px; }
+	.fs14 { font-size: 14px; }
+	.fs16 { font-size: 16px; }
+	.fs18 { font-size: 18px; }
+	.fs20 { font-size: 20px; }
+	.fs24 { font-size: 24px; }
+	.fs30 { font-size: 30px; }
+	.fs40 { font-size: 40px; }
+	.fs50 { font-size: 50px; }
+
+	.lhn { line-height: normal; }
+/* tamaños fuentes */
