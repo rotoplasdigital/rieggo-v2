@@ -6,22 +6,57 @@
 /*	MENU
 /* ============================================================== */
 	#rieggo-navegacion {
-		background: rgb(0 37 84 / 0%);
+		background: rgb(255, 255, 255);
 		transition: all ease .3s;
 		padding: 0 2rem;
 		padding-top: .5rem !important;
 		padding-bottom: .5rem !important;
 	}
-	#rieggo-navegacion img {
-		/* width: 200px; */
-		height: 70px;
-		transition: all ease .3s;
+
+	#navegacion-logo-rieggo {
+		width: 120px;
+	}
+
+	#navegacion-logo-rotoplas {
+		width: 100px;
 	}
 
 	.nav-link {
 		color: #002554 !important;
 	}
 /* menu */
+
+
+#rieggo-header {
+	height: 87vh;
+	background: url(/resources/images/ROT1186Mej_Mx_rieggo_banner-header-B.jpg) no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+
+#rieggo-circulos {
+	background: #00c7b1;
+	color: #fff;
+}
+#rieggo-circulos a {
+	width: 200px;
+	color: #fff;
+}
+#rieggo-circulos a p {
+	margin-bottom: 0;
+	margin-top: .5rem;
+}
+#rieggo-circulos a img {
+	width: 100px;
+}
+
+
+#form input,
+#form select {
+	width: 100%;
+	height: 38px;
+}
 
 
 /* ==============================================================
@@ -32,6 +67,10 @@
 		color: #fff;
 		padding-top: 2rem;
 		padding-bottom: 2rem;
+	}
+	
+	#footer-logo-rotoplas {
+		width: 131px;
 	}
 
 	.footer-btn {
