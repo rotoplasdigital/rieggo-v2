@@ -23,31 +23,13 @@
 	}
 
 	body {
-		font-family: 'rotoplas-regular', sans-serif;
+		font-family: 'rotoplas-light', sans-serif;
 		color: #002554;
-		font-size: 1rem;
-		line-height: normal;
+		font-size: 1.1rem;
+		line-height: 1.5;
 	}
 
 	.bold { font-family: 'rotoplas-bold'; }
 	.regular { font-family: 'rotoplas-regular'; }
 	.light { font-family: 'rotoplas-light'; }
 /* fuentes */
-
-
-
-/* ==============================================================
-/*	TAMAÑOS DE FUENTES
-/* ============================================================== */
-	.fs12 { font-size: 12px; }
-	.fs14 { font-size: 14px; }
-	.fs16 { font-size: 16px; }
-	.fs18 { font-size: 18px; }
-	.fs20 { font-size: 20px; }
-	.fs24 { font-size: 24px; }
-	.fs30 { font-size: 30px; }
-	.fs40 { font-size: 40px; }
-	.fs50 { font-size: 50px; }
-
-	.lhn { line-height: normal; }
-/* tamaños fuentes */

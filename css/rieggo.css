@@ -1,5 +1,4 @@
 @import "fuentes.css";
-/* @import "colores.css"; */
 @import "hover.css";
 
 /* ==============================================================
@@ -11,6 +10,7 @@
 		padding: 0 2rem;
 		padding-top: .5rem !important;
 		padding-bottom: .5rem !important;
+		box-shadow: 0px 0px 12px 0px rgb(0 0 0 / 50%);
 	}
 
 	#navegacion-logo-rieggo {
@@ -24,14 +24,60 @@
 	.nav-link {
 		color: #002554 !important;
 	}
+
+	#toggleMobileMenu {
+		transition: all ease .5s;
+	}
+	
+	
+	.navbar-light .navbar-toggler {
+		color: #00c7b1;
+		border-color: #00c7b0cd;
+	}
+	button:focus:not(:focus-visible) {
+		outline: 0;
+		color: rgb(0 199 177 / 50%);
+	}
 /* menu */
 
+
+h2 {
+	font-family: rotoplas-regular;
+	font-size: 2.5rem;
+	color: #00c7b1 !important;
+}
+h5 {
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    font-family: 'rotoplas-regular';
+    color: #00c7b1;
+}
+
+
+.rieggo-btn {
+	margin-top: .5rem;
+	padding: 1rem;
+	background: #00c7b1;
+	border-radius: 2rem;
+	color: #fff;
+	text-decoration: none;
+	line-height: 1;
+	display: inline-block;
+	font-family: 'rotoplas-regular';
+}
+.rieggo-btn:hover {
+	color: #fff;
+}
 
 #rieggo-header {
 	height: 87vh;
 	background: url(/resources/images/ROT1186Mej_Mx_rieggo_banner-header-B.jpg) no-repeat;
 	background-size: cover;
 	background-position: center;
+}
+#rieggo-header h1 {
+	color: #fff;
+	font-size: 3.2rem;
 }
 
 
@@ -40,7 +86,7 @@
 	color: #fff;
 }
 #rieggo-circulos a {
-	width: 200px;
+	width: 140px;
 	color: #fff;
 }
 #rieggo-circulos a p {
@@ -51,11 +97,66 @@
 	width: 100px;
 }
 
-
+#contacto {
+	padding: 68.38px 0;
+}
+#contacto h3 {
+	font-size: 2.2rem;
+	color: #00c7b1;
+	font-family: rotoplas-regular;
+}
+#contacto h5 {
+	font-size: 1.5rem;
+	font-family: rotoplas-bold;
+	color: #002554;
+}
+#contacto a h3 {
+	font-size: 2.2rem;
+	color: #002554;
+	font-family: rotoplas-bold;
+}
+#contacto p {
+	font-family: rotoplas-regular;
+}
+#contacto p a {
+	color: #002554;
+}
+#contacto p a:hover {
+	color: #009cde;
+}
 #form input,
 #form select {
 	width: 100%;
+	border-style: none;
+	padding: 9px 12px;
+}
+#form input {
+	background: transparent;
+    border-color: rgb(245, 245, 245);
+}
+#form input:focus-visible,
+#form select:focus-visible {
+	outline: none;
+	color: rgba(0,0,0,.87);
+}
+#form select {
+	background-color: rgb(245, 245, 245);
 	height: 38px;
+	border-radius: 10px;
+}
+#form button {
+    background-color: #00c7b1;
+    color: #fff;
+    border-radius: 28px;
+    width: auto;
+    padding: 0 20px;
+    border-style: none;
+    height: 42px;
+    line-height: 1;
+}
+.error--text {
+    color: #ff5722 !important;
+    caret-color: #ff5722 !important;
 }
 
 
@@ -74,7 +175,6 @@
 	}
 
 	.footer-btn {
-		display: block;
 		text-decoration: none;
 		padding: .25rem;
 		margin: .25rem 0;
@@ -82,7 +182,8 @@
 		transition: all ease .3s;
 	}
 	.footer-btn:hover {
-		color:#009cde;
+		color:#002554;
+		font-family: rotoplas-regular;
 	}
 
 	.footer-btn img {
@@ -94,4 +195,27 @@
 		display: inline-block;
 		width: 85%;
 	}
+
+	#footer-aviso {
+		border-top: 1px solid #fff;
+	}
+	#footer-aviso a {
+		color: #fff;
+	}
+	#footer-aviso a:hover {
+		color: #002554;
+		font-family: rotoplas-regular;
+	}
 /* footer */
+
+@media screen and (max-width: 579px) {
+	#rieggo-header h1 {
+		font-size: 2.2rem;
+	}
+
+	#rieggo-header {
+		background: url(/resources/images/ROT1186Mej_Mx_rieggo_banner-header-B-sm.jpg) no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+}
