@@ -1,6 +1,5 @@
 jQuery(document).ready(function($){
-	// Inicializacion de la carga de contenidos html
-	includeHTML();
+	// Inicializacion de la carga de contenidos html | includeHTML();
 	// Add smooth scrolling to all links
 	$("a").on('click', function(event) {
 		// Make sure this.hash has a value before overriding default behavior
@@ -9,7 +8,6 @@ jQuery(document).ready(function($){
 			event.preventDefault();
 			// Store hash
 			var hash = this.hash;
-			console.log(this.hash);
 			// Using jQuery's animate() method to add smooth page scroll
 			// The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
 			$('html, body').animate({
