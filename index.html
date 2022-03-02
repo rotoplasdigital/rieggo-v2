@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<!-- Google Tag Manager -->
 			<!-- for rieggo.com -->
@@ -131,7 +131,7 @@
 					<p>Escríbenos a <a href="mailto:info@rieggo.com" class="text-decoration-none hvr-float">info@rieggo.com</a> o déjanos tus datos<br class="d-none d-md-flex"> y un ejecutivo de rieggo te contactará.</p>
 				</div>
 				<div class="col-12 | col-sm-10 | col-xl-8">
-					<form id="form" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" class="mt-10">
+					<form id="form" name="form" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" class="mt-10">
 						<div class="container">
 							<input type="hidden" name="oid" value="00D1I0000002mL2">
 							<input type="hidden" name="retURL" value="https://rieggo.com/">
@@ -491,5 +491,17 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 		<!-- script -->
 		<script src="/js/rieggo.js"></script>
+		<script>		
+			const scriptURL = 'https://script.google.com/macros/s/AKfycbxmKAgHEHEih6TfHAuUN6Rl6oROKKdeqxDcPb-DZWskFaUv5ab58zbBeOxx3Y3L5AkV/exec'
+			const form = document.forms['form']
+
+			form.addEventListener('submit', e => {
+				e.preventDefault()
+				fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+					.then(response => console.log('Success!', response))
+					.catch(error => console.error('Error!', error.message))
+				e.currentTarget.submit()
+			})
+		</script>
 	</body>
 </html>
