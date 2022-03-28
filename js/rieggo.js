@@ -18,4 +18,15 @@ jQuery(document).ready(function($){
 			});
 		} // End if
 	});
+	//
+	$("#00N1I00000P9xne").on('change', function(){
+		optionValue = $("#00N1I00000P9xne").find(':selected').val()
+		//console.log('change: ' + optionValue)
+		if(optionValue === "Otro") {
+			$('#formularioTextArea').css('display','block')
+		} else  {
+			$('#formularioTextArea').css('display','none')
+			$('#00N1I00000P9xnj').val('')
+		}
+	})
 });

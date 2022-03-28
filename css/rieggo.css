@@ -38,6 +38,12 @@
 		outline: 0;
 		color: rgb(0 199 177 / 50%);
 	}
+
+	.nav-item {
+		border: 2px solid #00c7b1;
+		border-radius: 1rem;
+		font-size: 15px;
+	}
 /* menu */
 
 
@@ -154,6 +160,12 @@ h5 {
     height: 42px;
     line-height: 1;
 }
+#form textarea {
+    background: transparent;
+    border: none;
+    width: 100%;
+    padding: 9px 12px;
+}
 .error--text {
     color: #ff5722 !important;
     caret-color: #ff5722 !important;
@@ -234,6 +246,12 @@ h5 {
 		font-family: rotoplas-regular;
 	}
 /* footer */
+
+@media only screen and (max-width: 1200px) {
+	.nav-item {
+		margin-bottom: 1rem;
+	}
+}
 
 /* sm */
 @media only screen and (max-width: 959px) and (min-width: 600px) {#whatsapp-btn {
