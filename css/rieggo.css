@@ -247,6 +247,38 @@ h5 {
 	}
 /* footer */
 
+
+/* ==============================================================
+/*	VENDEDORES
+/* ============================================================== */
+#vendedor {
+	background: url(/resources/images/tarjeta-digital/fondo.svg) no-repeat;
+}
+
+#vendedor h3 {
+	color: #00c7b1;
+}
+
+#vendedor h5 {
+	color: #002554;
+}
+
+#vendedor-imagen {
+	width: 250px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.vendedor-botones {
+	width: 30%;
+	text-align: center;
+	color: #002554;
+}
+.vendedor-botones img {
+	margin-bottom: .5rem;
+}
+/* vendedores */
+
 @media only screen and (max-width: 1200px) {
 	.nav-item {
 		margin-bottom: 1rem;
