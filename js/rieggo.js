@@ -59,8 +59,9 @@ jQuery(document).ready(function($){
 	}
 	// Registro en Google Sheets y envio de correo
 	const scriptURL = 'https://script.google.com/macros/s/AKfycbxmKAgHEHEih6TfHAuUN6Rl6oROKKdeqxDcPb-DZWskFaUv5ab58zbBeOxx3Y3L5AkV/exec'
-	const form = document.forms['form']
+	const form = document.getElementById('form')
 	form.addEventListener('submit', e => {
+		console.log('envio de formulario')
 		e.preventDefault()
 		fetch(scriptURL, { method: 'POST', body: new FormData(form)})
 			.then(
@@ -76,7 +77,7 @@ jQuery(document).ready(function($){
 					Cookies.set('uslasturlvideo', videoUrl, { expires: 365 })
 				}
 				cerrarVideo()
-				form.submit()
+				//form.submit()
 			})
 			.catch(error => console.error('Error!', error.message))
 	})

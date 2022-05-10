@@ -44,28 +44,28 @@
 				</div>
 				<!-- contacto -->
 				<div class="col-11 d-flex flex-row justify-content-between mt-3 pt-3 | col-lg-6 offset-lg-3">
-					<a class="vendedor-botones text-decoration-none" href="#">
-						<img src="/resources/images/tarjeta-digital/telefono.svg" height="60" alt="Icono teléfono">
+					<a class="vendedor-botones text-decoration-none" href="tel:5213121252049">
+						<img src="/resources/images/tarjeta-digital/telefono.svg" height="60" alt="Icono teléfono" title="Llamar">
 						<p class="bold">Llamar</p>
 					</a>
-					<a class="vendedor-botones text-decoration-none" href="#">
-						<img src="/resources/images/tarjeta-digital/whatsapp.svg" height="60" alt="Icono Whastapp">
+					<a class="vendedor-botones text-decoration-none" href="https://api.whatsapp.com/send?phone=5213121252049" target="_blank" rel="noopener noreferrer">
+						<img src="/resources/images/tarjeta-digital/whatsapp.svg" height="60" alt="Icono Whastapp" title="Enviar mensaje">
 						<p class="bold">Enviar mensaje</p>
 					</a>
-					<a class="vendedor-botones text-decoration-none" href="#">
-						<img src="/resources/images/tarjeta-digital/correo.svg" height="60" alt="Icono Correo">
+					<a class="vendedor-botones text-decoration-none" href="mailto:jbautista@rotoplas.com">
+						<img src="/resources/images/tarjeta-digital/correo.svg" height="60" alt="Icono Correo" title="Enviar correo">
 						<p class="bold">Enviar correo</p>
 					</a>
 				</div>
 				<!-- datos -->
 				<div class="col-10 offset-1 mt-3 pt-3 text-start | col-lg-4 offset-lg-4">
-					<p class="vendedor-datos">
-						<img src="/resources/images/tarjeta-digital/copiar.svg" height="20" alt="Icono Copiar">&nbsp;
+					<p class="vendedor-datos" data="+5213121252049">
+						<img src="/resources/images/tarjeta-digital/copiar.svg" height="20" alt="Icono Copiar" title="copiar">&nbsp;
 						<span>Tel.</span> 
 						<span class="bold">+52 1 312 125 2049</span>
 					</p>
-					<p class="vendedor-datos">
-						<img src="/resources/images/tarjeta-digital/copiar.svg" height="20" alt="Icono Copiar">&nbsp;
+					<p class="vendedor-datos" data="jbautista@rotoplas.com">
+						<img src="/resources/images/tarjeta-digital/copiar.svg" height="20" alt="Icono Copiar" title="copiar">&nbsp;
 						<span>E-mail.</span> 
 						<span class="bold">jbautista@rotoplas.com</span>
 					</p>
@@ -349,5 +349,18 @@
 		<script src="/js/rieggo.js"></script>
 		<script src="/js/smooth-scrolling.js"></script>
 		<script src="/js/formtosheets.js"></script>
+		<script>
+			// botones
+			var botones = document.getElementsByClassName("vendedor-datos")
+			// funcion para copiar al clipboard
+			var copiarDatos = function() {
+				var datos = this.getAttribute("data");
+				navigator.clipboard.writeText(datos);
+			}
+			// agregamos eventlistener a los botones con es6
+			Array.from(botones).forEach(function(element) {
+				element.addEventListener('click', copiarDatos);
+			})
+		</script>
 	</body>
 </html>
