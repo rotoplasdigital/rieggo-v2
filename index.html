@@ -506,6 +506,41 @@
 		<!-- script -->
 		<script src="/js/rieggo.js"></script>
 		<script src="/js/smooth-scrolling.js"></script>
-		<script src="/js/formtosheets.js"></script>
+		<script>
+			jQuery(document).ready(function($){
+				// Formulario, campo oculto
+				$("#00N1I00000P9xne").on('change', function(){
+					optionValue = $("#00N1I00000P9xne").find(':selected').val()
+					//console.log('change: ' + optionValue)
+					if(optionValue === "Otro") {
+						$('#formularioTextArea').css('display','block')
+					} else  {
+						$('#formularioTextArea').css('display','none')
+						$('#00N1I00000P9xnj').val('')
+					}
+				})
+				// Registro en Google Sheets y envio de correo
+				const scriptURL = 'https://script.google.com/macros/s/AKfycbxmKAgHEHEih6TfHAuUN6Rl6oROKKdeqxDcPb-DZWskFaUv5ab58zbBeOxx3Y3L5AkV/exec'
+				const form = document.getElementById('form')
+				form.addEventListener('submit', e => {
+					console.log('envio de formulario')
+					e.preventDefault()
+					fetch(
+						scriptURL, 
+						{ 
+							method: 'POST', 
+							body: new FormData(form)
+						}
+					)
+					.then(
+						response => console.log('Success!', response)
+					)
+					.then(function() {
+						form.submit()
+					})
+					.catch(error => console.error('Error!', error.message))
+				})
+			});
+		</script>
 	</body>
 </html>
