@@ -277,6 +277,10 @@ h5 {
 .vendedor-botones img {
 	margin-bottom: .5rem;
 }
+
+#form-pilotos-tecnologia label span {
+	color: red;
+}
 /* vendedores */
 
 @media only screen and (max-width: 1200px) {
