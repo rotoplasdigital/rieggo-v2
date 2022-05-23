@@ -118,7 +118,7 @@
 		<!-- /Contenidos -->
 		<!-- Capacitacion Formulario -->
 		<div id="capacitacion-form" style="display: none;">
-			<form id="form" name="form" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" class="mt-10">
+			<!-- <form id="form" name="form" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" class="mt-10">
 				<div class="container">
 					<input type="hidden" name="oid" value="00D1I0000002mL2">
 					<input type="hidden" name="retURL" value="https://rieggo.com/capacitacion">
@@ -373,6 +373,48 @@
 						</button>
 					</div>
 				</div>
+			</form> -->
+			<form id="form-capacitacion" name="form-capacitacion">
+				<input id="fecha" type="hidden" name="fecha">
+				<input id="hora" type="hidden" name="hora">
+				<div class="mb-3">
+					<label for="nombre" class="form-label">Nombre <span>*</span></label>
+					<input type="text" class="form-control" id="nombre" name="nombre" aria-describedby="emailHelp" required>
+				</div>
+				<div class="mb-3">
+					<label for="celular" class="form-label">Celular <span>*</span></label>
+					<input type="text" class="form-control" id="celular" name="celular" required>
+				</div>
+				<div class="mb-3">
+					<label for="email" class="form-label">Email <span>*</span></label>
+					<input type="email" class="form-control" id="email" name="email" required>
+				</div>
+				<div class="mb-3">
+					<label for="que_cultivo_produces" class="form-label">¿Qué cultivo produces?</label>
+					<textarea class="form-control" id="que_cultivo_produces" name="que_cultivo_produces" rows="3"></textarea>
+				</div>
+				<div class="mb-3">
+					<label for="cuantas_hectareas_manejas" class="form-label">¿Cuántas hectáreas manejas?</label>
+					<textarea class="form-control" id="cuantas_hectareas_manejas" name="cuantas_hectareas_manejas" rows="3"></textarea>
+				</div>
+				<div class="mb-3">
+					<label class="form-label">¿Estás interesado en conocer más sobre las soluciones de rieggo?</label>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="interesado_conocer_mas" id="interesado_conocer_mas-si" value="si">
+						<label class="form-check-label" for="interesado_conocer_mas-si">
+							Si
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="interesado_conocer_mas" id="interesado_conocer_mas-no" value="no">
+						<label class="form-check-label" for="interesado_conocer_mas-no">
+							No
+						</label>
+					</div>
+				</div>
+				<div class="mb-3 text-center">
+					<button type="submit" class="rieggo-btn w-50">Enviar</button>
+				</div>
 			</form>
 		</div>
 		<!-- Footer -->
@@ -485,33 +527,55 @@
 					Fancybox.close()
 				}
 				// Registro en Google Sheets y envio de correo
-				const scriptURL = 'https://script.google.com/macros/s/AKfycbxmKAgHEHEih6TfHAuUN6Rl6oROKKdeqxDcPb-DZWskFaUv5ab58zbBeOxx3Y3L5AkV/exec'
-				const form = document.getElementById('form')
+				// ID de implementación : AKfycbw5IRelQOl3_Avq_DR94Z5ZZZKSrmmP2BjUNwwzhJ2wLS2dLB7P9tYmkq9RYV_Vr7Wipw
+				// Aplicación web : https://script.google.com/macros/s/AKfycbw5IRelQOl3_Avq_DR94Z5ZZZKSrmmP2BjUNwwzhJ2wLS2dLB7P9tYmkq9RYV_Vr7Wipw/exec
+				const scriptURL = 'https://script.google.com/macros/s/AKfycbw5IRelQOl3_Avq_DR94Z5ZZZKSrmmP2BjUNwwzhJ2wLS2dLB7P9tYmkq9RYV_Vr7Wipw/exec'
+				const form = document.getElementById('form-capacitacion')
 				form.addEventListener('submit', e => {
 					console.log('envio de formulario')
 					e.preventDefault()
-					fetch(
-						scriptURL, {
-							 method: 'POST', 
-							 body: new FormData(form)
+					/* ==============================================================
+					/* FECHA / HORA
+					/* ============================================================== */
+						const t = new Date()
+						const date = ('0' + t.getDate()).slice(-2)
+						const month = ('0' + (t.getMonth() + 1)).slice(-2)
+						const year = t.getFullYear()
+						const hours = ('0' + t.getHours()).slice(-2)
+						const minutes = ('0' + t.getMinutes()).slice(-2)
+						const seconds = ('0' + t.getSeconds()).slice(-2)
+						const fecha = `${date}/${month}/${year}`
+						const hora = `${hours}:${minutes}:${seconds}`
+						document.getElementById('fecha').value = fecha
+						document.getElementById('hora').value = hora
+					/**/
+					/* ==============================================================
+					/* FETCH
+					/* ============================================================== */
+						fetch(
+							scriptURL, {
+								method: 'POST', 
+								body: new FormData(form)
 							}
-					)
-					.then(
-						response => console.log('Success!', response)
-					)
-					.then(function() {
-						// Al no haber Cookie se crea
-						if ( Cookies.get('usdatacol') ) {
-							console.log('response:cookie:si')
-						} else {
-							console.log('response:cookie:no')
-							Cookies.set('usdatacol', 'yes', { expires: 365 })
-							Cookies.set('uslasturlvideo', videoUrl, { expires: 365 })
-						}
-						cerrarVideo()
-						form.submit()
-					})
-					.catch(error => console.error('Error!', error.message))
+						)
+						.then(
+							response => console.log('Success!', response)
+						)
+						.then(function() {
+							// Al no haber Cookie se crea
+							if ( Cookies.get('usdatacol') ) {
+								console.log('response:cookie:si')
+							} else {
+								console.log('response:cookie:no')
+								Cookies.set('usdatacol', 'yes', { expires: 365 })
+								Cookies.set('uslasturlvideo', videoUrl, { expires: 365 })
+							}
+							cerrarVideo()
+							form.reset()
+							abrirVideo()
+						})
+						.catch(error => console.error('Error!', error.message))
+					/**/
 				})
 			});
 		</script>
