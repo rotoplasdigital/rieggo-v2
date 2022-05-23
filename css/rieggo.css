@@ -70,6 +70,7 @@ h5 {
 	line-height: 1;
 	display: inline-block;
 	font-family: 'rotoplas-regular';
+	border: none;
 }
 .rieggo-btn:hover {
 	color: #fff;
@@ -251,33 +252,51 @@ h5 {
 /* ==============================================================
 /*	VENDEDORES
 /* ============================================================== */
-#vendedor {
-	background: url(/resources/images/tarjeta-digital/fondo.svg) no-repeat;
-}
+	#vendedor {
+		background: url(/resources/images/tarjeta-digital/fondo.svg) no-repeat;
+	}
 
-#vendedor h3 {
-	color: #00c7b1;
-}
+	#vendedor h3 {
+		color: #00c7b1;
+	}
 
-#vendedor h5 {
-	color: #002554;
-}
+	#vendedor h5 {
+		color: #002554;
+	}
 
-#vendedor-imagen {
-	width: 250px;
-	border-radius: 50%;
-	overflow: hidden;
-}
+	#vendedor-imagen {
+		width: 250px;
+		border-radius: 50%;
+		overflow: hidden;
+	}
 
-.vendedor-botones {
-	width: 30%;
-	text-align: center;
-	color: #002554;
-}
-.vendedor-botones img {
-	margin-bottom: .5rem;
-}
+	.vendedor-botones {
+		width: 30%;
+		text-align: center;
+		color: #002554;
+	}
+	.vendedor-botones img {
+		margin-bottom: .5rem;
+	}
+
+	#form-pilotos-tecnologia label span {
+		color: red;
+	}
+
+	.vendedor-datos {
+		cursor: pointer;
+	}
 /* vendedores */
+
+/* #capacitacion-form form input {
+	border: 1px solid !important;
+}
+#capacitacion-form form textarea {
+	border: 1px solid !important;
+}
+#capacitacion-form form input[type="radio"] {
+	width: auto !important;
+} */
 
 @media only screen and (max-width: 1200px) {
 	.nav-item {
